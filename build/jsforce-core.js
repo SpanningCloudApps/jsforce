@@ -2126,7 +2126,7 @@ var _ = require('lodash/core'),
  * @private
  */
 function parseCSV(str, options) {
-  options = _.extend({}, options, { columns: true });
+  options = _.extend({}, options, { columns: true, max_limit_on_data_read: 256000 });
   return csvParseSync(str, options);
 }
 
@@ -2142,7 +2142,7 @@ function toCSV(records, options) {
  * @private
  */
 function parseCSVStream(options) {
-  options = _.extend({}, options, { columns: true });
+  options = _.extend({}, options, { columns: true, max_limit_on_data_read: 256000 });
   return csvParse(options);
 }
 
